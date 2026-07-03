@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kinetix AI Bharat | Enterprise Business Optimizer</title>
+  <meta name="description" content="Kinetix AI Bharat is an enterprise agent swarm platform optimizing B2B sales pipelines, uncovering expense inefficiencies in INR, synthesizing raw enterprise data, and accelerating Indian product innovation.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header Navigation -->
+    <header class="top-header">
+      <div class="brand-container">
+        <div class="brand-logo">
+          <div class="logo-core"></div>
+          <div class="logo-ring"></div>
+        </div>
+        <div class="brand-text">
+          <h1>KINETIX <span>AI BHARAT</span> 🇮🇳</h1>
+          <span class="badge-track">Agents for Business Track</span>
+        </div>
+      </div>
+
+      <div class="system-status-bar">
+        <div class="status-pill green">
+          <span class="status-dot"></span>
+          <span class="status-label">Swarm Health: <strong>100% Operational</strong></span>
+        </div>
+        <div class="status-pill blue">
+          <span class="status-label">Active Agents: <strong>4 Autonomous Nodes</strong></span>
+        </div>
+        <div class="status-pill purple">
+          <span class="status-label">GST & Silos Synced: <strong>6 Indian Feeds</strong></span>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <select id="dataset-selector" class="custom-select">
+          <option value="techcorp">Dataset: Tata Digital Enterprise (IT & SaaS)</option>
+          <option value="logistics">Dataset: Reliance Logistics & Express</option>
+          <option value="retail">Dataset: Apollo BioHealth Retail</option>
+        </select>
+        <button id="btn-ingest-data" class="btn btn-secondary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          Ingest Tally / GST Data
+        </button>
+        <button id="btn-export-report" class="btn btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          Export Executive Brief
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Workspace Layout -->
+    <div class="main-layout">
+      <!-- Sidebar Navigation / Agent Swarm Selector -->
+      <aside class="sidebar">
+        <div class="sidebar-section-title">Autonomous Agent Swarm</div>
+        
+        <nav class="agent-nav">
+          <button class="agent-nav-item active" data-agent="sales">
+            <div class="agent-icon cyan">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+            </div>
+            <div class="agent-info">
+              <div class="agent-name">B2B Sales Pipeline Optimizer</div>
+              <div class="agent-desc">Deal velocity & procurement coaching</div>
+            </div>
+            <span class="agent-badge">Live</span>
+          </button>
+
+          <button class="agent-nav-item" data-agent="expense">
+            <div class="agent-icon emerald">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <div class="agent-info">
+              <div class="agent-name">Expense & GST Inefficiency Agent</div>
+              <div class="agent-desc">Tally leakage & SaaS optimization</div>
+            </div>
+            <span class="agent-badge">Active</span>
+          </button>
+
+          <button class="agent-nav-item" data-agent="insight">
+            <div class="agent-icon indigo">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <div class="agent-info">
+              <div class="agent-name">Raw Data Insight Synthesizer</div>
+              <div class="agent-desc">Silo breaker & forecast engine</div>
+            </div>
+            <span class="agent-badge">Syncing</span>
+          </button>
+
+          <button class="agent-nav-item" data-agent="product">
+            <div class="agent-icon amber">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/><polygon points="12 2 15 8 9 8 12 2"/></svg>
+            </div>
+            <div class="agent-info">
+              <div class="agent-name">Product Innovation Strategist</div>
+              <div class="agent-desc">WhatsApp telemetry & R&D matrix</div>
+            </div>
+            <span class="agent-badge">Ready</span>
+          </button>
+        </nav>
+
+        <!-- Dynamic What-If Scenario Simulator Module -->
+        <div class="sidebar-module glass-card">
+          <div class="module-header">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+            <h3>Scenario Simulator (INR)</h3>
+          </div>
+          <p class="module-desc">Adjust sliders to model enterprise ROI and EBITDA impact in Lakhs & Crores.</p>
+
+          <div class="slider-group">
+            <div class="slider-label-row">
+              <span>Pipeline Closure Rate</span>
+              <span id="val-win-lift" class="slider-val">+18%</span>
+            </div>
+            <input type="range" id="slider-win-lift" min="0" max="40" value="18">
+          </div>
+
+          <div class="slider-group">
+            <div class="slider-label-row">
+              <span>Tally/Expense Optimization</span>
+              <span id="val-expense-cut" class="slider-val">25%</span>
+            </div>
+            <input type="range" id="slider-expense-cut" min="0" max="50" value="25">
+          </div>
+
+          <div class="slider-group">
+            <div class="slider-label-row">
+              <span>Product R&D Acceleration</span>
+              <span id="val-rd-velocity" class="slider-val">2.0x</span>
+            </div>
+            <input type="range" id="slider-rd-velocity" min="1.0" max="3.0" step="0.1" value="2.0">
+          </div>
+
+          <div class="simulator-results">
+            <div class="sim-metric">
+              <span class="sim-title">Annual Savings</span>
+              <span id="sim-projected-savings" class="sim-value text-emerald">₹1.25 Cr</span>
+            </div>
+            <div class="sim-metric">
+              <span class="sim-title">Net Revenue Lift</span>
+              <span id="sim-projected-revenue" class="sim-value text-cyan">+₹3.45 Cr</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Data Silo Integration Matrix -->
+        <div class="sidebar-module glass-card">
+          <div class="module-header">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+            <h3>Connected Indian Data Feeds</h3>
+          </div>
+          <div class="silo-matrix-grid">
+            <div class="silo-chip active" title="Zoho CRM Enterprise Feed Synced"><span class="chip-dot green"></span>Zoho CRM</div>
+            <div class="silo-chip active" title="Tally Prime ERP Ledger Synced"><span class="chip-dot green"></span>Tally Prime</div>
+            <div class="silo-chip active" title="GSTIN Portal Portal Synced"><span class="chip-dot green"></span>GST Portal</div>
+            <div class="silo-chip active" title="Razorpay Enterprise Payouts Synced"><span class="chip-dot green"></span>Razorpay</div>
+            <div class="silo-chip active" title="Darwinbox HR Tech Feed Synced"><span class="chip-dot green"></span>Darwinbox</div>
+            <div class="silo-chip warning" title="WhatsApp Business Telemetry Syncing"><span class="chip-dot yellow"></span>WhatsApp API</div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main Content Area -->
+      <main class="content-area">
+        <!-- AI Executive Briefing Header Bar -->
+        <div class="executive-audio-briefing glass-card">
+          <div class="briefing-left">
+            <button id="btn-play-audio" class="btn-audio-play">
+              <svg id="audio-play-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </button>
+            <div class="briefing-text">
+              <h4>Kinetix Swarm Synthesis Executive Briefing (Bharat Edition)</h4>
+              <p id="audio-status-text">Click to listen to AI-synthesized strategic priorities for Indian CXOs.</p>
+            </div>
+          </div>
+          <div class="waveform-container">
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+          </div>
+        </div>
+
+        <!-- Metric Cards Grid -->
+        <div class="metrics-grid">
+          <div class="metric-card glass-card border-cyan">
+            <div class="metric-header">
+              <span>Stalled Pipeline Value</span>
+              <div class="metric-icon cyan">📈</div>
+            </div>
+            <div class="metric-body">
+              <span id="metric-stalled-deals" class="metric-num">₹4.8 Cr</span>
+              <span class="metric-change negative">⚠️ 3 Stage-4 B2B deals stuck > 45 days</span>
+            </div>
+          </div>
+
+          <div class="metric-card glass-card border-emerald">
+            <div class="metric-header">
+              <span>Monthly Expense Waste</span>
+              <div class="metric-icon emerald">💸</div>
+            </div>
+            <div class="metric-body">
+              <span id="metric-expense-waste" class="metric-num">₹18.5 L<small>/mo</small></span>
+              <span class="metric-change positive">✨ 18 unutilized AWS Mumbai seats & Tally duplicates</span>
+            </div>
+          </div>
+
+          <div class="metric-card glass-card border-indigo">
+            <div class="metric-header">
+              <span>Data Silo Sync Score</span>
+              <div class="metric-icon indigo">⚡</div>
+            </div>
+            <div class="metric-body">
+              <span id="metric-silo-score" class="metric-num">96.2%</span>
+              <span class="metric-change positive">🚀 Tally + GST real-time reconciliations</span>
+            </div>
+          </div>
+
+          <div class="metric-card glass-card border-amber">
+            <div class="metric-header">
+              <span>Product R&D Velocity</span>
+              <div class="metric-icon amber">🎯</div>
+            </div>
+            <div class="metric-body">
+              <span id="metric-rd-roi" class="metric-num">4.5x</span>
+              <span class="metric-change positive">🔥 WhatsApp AI ordering feature prioritized</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dynamic Workspace Panel container -->
+        <div class="workspace-views">
+          
+          <!-- AGENT VIEW 1: B2B Sales Pipeline Optimizer -->
+          <section id="view-sales" class="agent-view-panel active">
+            <div class="view-header-bar">
+              <div>
+                <h2>B2B Sales Pipeline Optimizer Agent</h2>
+                <p>Real-time analysis of enterprise deal stages, vendor empanelment bottlenecks, and procurement coaching.</p>
+              </div>
+              <button class="btn btn-primary btn-run-agent" data-target="sales">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                Audit Pipeline Swarm
+              </button>
+            </div>
+
+            <div class="grid-two-col">
+              <div class="card glass-card">
+                <div class="card-title-row">
+                  <h3>Enterprise Pipeline Velocity & Churn Risk (INR Cr)</h3>
+                  <span class="badge cyan">Zoho CRM Feed</span>
+                </div>
+                <div class="chart-wrapper">
+                  <svg id="sales-chart" viewBox="0 0 600 260" class="custom-svg-chart">
+                    <!-- Dynamic SVG content injected by JS -->
+                  </svg>
+                </div>
+                <div class="chart-legend">
+                  <span class="legend-item"><span class="color-box cyan"></span> Healthy Velocity</span>
+                  <span class="legend-item"><span class="color-box amber"></span> Procurement Review</span>
+                  <span class="legend-item"><span class="color-box red"></span> Critical Bottleneck</span>
+                </div>
+              </div>
+
+              <div class="card glass-card terminal-card">
+                <div class="terminal-header">
+                  <div class="terminal-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+                  <div class="terminal-title">Agent Telemetry: Bharat_Sales_Agent_v4</div>
+                  <span class="pulse-tag">Streaming</span>
+                </div>
+                <div id="terminal-sales" class="terminal-body"></div>
+              </div>
+            </div>
+
+            <div class="card glass-card mt-20">
+              <h3>Actionable Enterprise Deal Directives</h3>
+              <div class="table-responsive">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Enterprise Account</th>
+                      <th>Deal Value (INR)</th>
+                      <th>Current Stage</th>
+                      <th>Stagnation Days</th>
+                      <th>Procurement Analysis</th>
+                      <th>Autonomous Coaching Action</th>
+                    </tr>
+                  </thead>
+                  <tbody id="sales-deals-table">
+                    <!-- Populated dynamically -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Vendor Empanelment & Compliance Shield -->
+            <div class="card glass-card mt-20 border-cyan">
+              <div class="card-title-row">
+                <h3>B2B Empanelment Compliance Shield (Interactive)</h3>
+                <span class="badge cyan">RBI & MSME Audit Active</span>
+              </div>
+              <p class="module-desc mb-15">Select a stalled B2B deal to audit its compliance checklist, generate MSME agreements, and verify RBI cybersecurity guidelines.</p>
+              
+              <div class="compliance-workspace">
+                <div class="compliance-selector">
+                  <button class="compliance-deal-btn active" data-deal="infosys">
+                    <span>Infosys Cloud Solutions</span>
+                    <span class="status-indicator warning" id="infosys-badge">Pending RBI Audit</span>
+                  </button>
+                  <button class="compliance-deal-btn" data-deal="hdfc">
+                    <span>HDFC Digital Banking</span>
+                    <span class="status-indicator warning" id="hdfc-badge">Pending RBI Audit</span>
+                  </button>
+                  <button class="compliance-deal-btn" data-deal="wipro">
+                    <span>Wipro Infra Division</span>
+                    <span class="status-indicator success" id="wipro-badge">Empanelled</span>
+                  </button>
+                </div>
+                
+                <div class="compliance-detail-card glass-card">
+                  <h4 id="compliance-active-deal-title">Infosys Cloud Solutions — Compliance Audit</h4>
+                  <div class="compliance-check-grid">
+                    <div class="check-item passed">
+                      <span class="check-icon">✅</span>
+                      <div class="check-text">
+                        <h5>PAN & GSTIN Validation</h5>
+                        <p>Verified against Income Tax & GSTN databases</p>
+                      </div>
+                    </div>
+                    <div class="check-item passed">
+                      <span class="check-icon">✅</span>
+                      <div class="check-text">
+                        <h5>MSME Enterprise Registration</h5>
+                        <p>MSME Class-A certificate validated successfully</p>
+                      </div>
+                    </div>
+                    <div class="check-item" id="audit-rbi-check">
+                      <span class="check-icon" id="audit-rbi-icon">⚠️</span>
+                      <div class="check-text">
+                        <h5>RBI Cyber Security Audit</h5>
+                        <p id="audit-rbi-desc">Pending verification of data localization compliance certificates</p>
+                      </div>
+                    </div>
+                    <div class="check-item passed">
+                      <span class="check-icon">✅</span>
+                      <div class="check-text">
+                        <h5>Standard SLA Legal Draft</h5>
+                        <p>Mutual agreement legal clauses approved by corporate counsel</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="compliance-actions">
+                    <button class="btn btn-secondary" id="btn-generate-agreement">Draft MSME Agreement</button>
+                    <button class="btn btn-primary" id="btn-verify-compliance">Verify RBI Compliance</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- AGENT VIEW 2: Expense & GST Inefficiency Agent -->
+          <section id="view-expense" class="agent-view-panel">
+            <div class="view-header-bar">
+              <div>
+                <h2>Expense & GST Inefficiency Agent</h2>
+                <p>Scans Tally Prime ledgers, flags unutilized cloud servers, and optimizes GST input tax credits (ITC).</p>
+              </div>
+              <button class="btn btn-primary btn-run-agent" data-target="expense">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                Run Tally / Financial Audit
+              </button>
+            </div>
+
+            <div class="grid-two-col">
+              <div class="card glass-card">
+                <div class="card-title-row">
+                  <h3>Enterprise Expense Breakdown & Waste Anomalies</h3>
+                  <span class="badge emerald">Tally Prime + GST Synced</span>
+                </div>
+                <div class="chart-wrapper">
+                  <svg id="expense-chart" viewBox="0 0 600 260" class="custom-svg-chart">
+                    <!-- SVG Chart injected via JS -->
+                  </svg>
+                </div>
+                <div class="chart-legend">
+                  <span class="legend-item"><span class="color-box emerald"></span> Valid Operating Spend</span>
+                  <span class="legend-item"><span class="color-box red"></span> SaaS & Infra Waste</span>
+                  <span class="legend-item"><span class="color-box purple"></span> Unclaimed GST Credit</span>
+                </div>
+              </div>
+
+              <div class="card glass-card terminal-card">
+                <div class="terminal-header">
+                  <div class="terminal-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+                  <div class="terminal-title">Agent Telemetry: Tally_Audit_Node</div>
+                </div>
+                <div id="terminal-expense" class="terminal-body"></div>
+              </div>
+            </div>
+
+            <div class="card glass-card mt-20">
+              <h3>Flagged Inefficiencies & Contract renegotiations</h3>
+              <div class="table-responsive">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Category / Vendor</th>
+                      <th>Monthly Spend (INR)</th>
+                      <th>Redundancy Flag</th>
+                      <th>Target Monthly Spend</th>
+                      <th>Automated Negotiation Directives</th>
+                    </tr>
+                  </thead>
+                  <tbody id="expense-table">
+                    <!-- Dynamic -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- GST Invoice Reconciler Portal -->
+            <div class="card glass-card mt-20 border-emerald">
+              <div class="card-title-row">
+                <h3>GST Invoice Reconciler Portal (ITC Matcher)</h3>
+                <div class="header-actions">
+                  <button class="btn btn-secondary" id="btn-run-gst-sync">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+                    Re-Sync GSTR-2B
+                  </button>
+                  <span class="badge emerald">ITC Reconciliation Engine</span>
+                </div>
+              </div>
+              <p class="module-desc mb-15">Audits corporate purchase invoices against the GST portal to flag missing vendor GSTR-1 filings and maximize Input Tax Credit (ITC) savings.</p>
+              
+              <div class="gst-reconciler-table-wrapper">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Invoice ID / Date</th>
+                      <th>Supplier Name</th>
+                      <th>Taxable Value</th>
+                      <th>CGST + SGST / IGST</th>
+                      <th>Reconciliation Status</th>
+                      <th>AI Action Recommendation</th>
+                    </tr>
+                  </thead>
+                  <tbody id="gst-reconciler-table">
+                    <tr>
+                      <td><strong>INV-2026-8942</strong><br><small class="text-muted">24-Jun-2026</small></td>
+                      <td>AWS India (Mumbai Region)</td>
+                      <td class="font-mono">₹7,20,339</td>
+                      <td class="font-mono">₹1,29,661 (18%)</td>
+                      <td><span class="badge emerald">Matched ✅</span></td>
+                      <td><span class="text-emerald">ITC claimable (₹1,29,661 credited)</span></td>
+                    </tr>
+                    <tr class="disputed-row">
+                      <td><strong>INV-2026-7782</strong><br><small class="text-muted">18-Jun-2026</small></td>
+                      <td>Global HR Management Tool</td>
+                      <td class="font-mono">₹5,25,424</td>
+                      <td class="font-mono">₹94,576 (18%)</td>
+                      <td><span class="badge red" id="hdfc-gst-badge">Missing in GSTR-2B ⚠️</span></td>
+                      <td>
+                        <div class="flex-actions" style="display: flex; align-items: center; gap: 10px; justify-content: space-between;">
+                          <span class="text-amber" id="hdfc-gst-action">Vendor has not filed GSTR-1. Credit blocked!</span>
+                          <button class="btn btn-secondary btn-small" id="btn-ping-vendor">WhatsApp Vendor</button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>INV-2026-6612</strong><br><small class="text-muted">12-Jun-2026</small></td>
+                      <td>Tally Integration Partner</td>
+                      <td class="font-mono">₹1,50,000</td>
+                      <td class="font-mono">₹27,000 (18%)</td>
+                      <td><span class="badge emerald">Matched ✅</span></td>
+                      <td><span class="text-emerald">ITC claimable (₹27,000 credited)</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <!-- AGENT VIEW 3: Raw Data Insight Synthesizer -->
+          <section id="view-insight" class="agent-view-panel">
+            <div class="view-header-bar">
+              <div>
+                <h2>Raw Data Insight Synthesizer Agent</h2>
+                <p>Synthesizes raw data across CRM, Tally ledgers, and WhatsApp telemetry for executive decision-making.</p>
+              </div>
+              <button class="btn btn-primary btn-run-agent" data-target="insight">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                Synthesize Indian Feeds
+              </button>
+            </div>
+
+            <div class="grid-two-col">
+              <div class="card glass-card">
+                <div class="card-title-row">
+                  <h3>Multi-Silo Revenue & EBITDA Forecast</h3>
+                  <span class="badge indigo">Cross-Silo Neural Engine</span>
+                </div>
+                <div class="chart-wrapper">
+                  <svg id="insight-chart" viewBox="0 0 600 260" class="custom-svg-chart">
+                    <!-- SVG Chart injected via JS -->
+                  </svg>
+                </div>
+              </div>
+
+              <div class="card glass-card terminal-card">
+                <div class="terminal-header">
+                  <div class="terminal-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+                  <div class="terminal-title">Agent Telemetry: Bharat_Silo_Synthesizer</div>
+                </div>
+                <div id="terminal-insight" class="terminal-body"></div>
+              </div>
+            </div>
+
+            <div class="card glass-card mt-20">
+              <h3>Synthesized Strategic Directives for Indian CXOs</h3>
+              <div class="insight-cards-grid" id="insight-directives-grid">
+                <!-- Injected dynamically -->
+              </div>
+            </div>
+          </section>
+
+          <!-- AGENT VIEW 4: Product Innovation Strategist -->
+          <section id="view-product" class="agent-view-panel">
+            <div class="view-header-bar">
+              <div>
+                <h2>Product Innovation Strategist Agent</h2>
+                <p>Analyzes WhatsApp Business interactions, customer support tickets, and market trends to craft product roadmaps.</p>
+              </div>
+              <button class="btn btn-primary btn-run-agent" data-target="product">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                Generate Product Matrix
+              </button>
+            </div>
+
+            <div class="grid-two-col">
+              <div class="card glass-card">
+                <div class="card-title-row">
+                  <h3>R&D Prioritization Matrix (Customer Value vs Engineering Days)</h3>
+                  <span class="badge amber">WhatsApp & Freshworks Analytics</span>
+                </div>
+                <div class="chart-wrapper">
+                  <svg id="product-chart" viewBox="0 0 600 260" class="custom-svg-chart">
+                    <!-- SVG chart injected via JS -->
+                  </svg>
+                </div>
+              </div>
+
+              <div class="card glass-card terminal-card">
+                <div class="terminal-header">
+                  <div class="terminal-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+                  <div class="terminal-title">Agent Telemetry: Product_RND_Agent</div>
+                </div>
+                <div id="terminal-product" class="terminal-body"></div>
+              </div>
+            </div>
+
+            <div class="card glass-card mt-20">
+              <h3>Feature Roadmap & Innovation Backlog</h3>
+              <div class="table-responsive">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Proposed Innovation Initiative</th>
+                      <th>Customer Demand Index</th>
+                      <th>Engineering Effort</th>
+                      <th>Projected ARR Lift (INR)</th>
+                      <th>Strategic Action Plan</th>
+                    </tr>
+                  </thead>
+                  <tbody id="product-roadmap-table">
+                    <!-- Dynamic -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+        </div>
+      </main>
+
+      <!-- Autonomous Swarm Copilot Sidebar -->
+      <aside class="copilot-panel">
+        <div class="copilot-header">
+          <div class="copilot-header-title">
+            <span class="status-dot green animate-pulse"></span>
+            <h3>Swarm Copilot</h3>
+          </div>
+          <span class="badge indigo">Agent Swarm</span>
+        </div>
+        <div id="copilot-messages" class="copilot-chat-body">
+          <div class="chat-message agent-msg system">
+            <span class="chat-agent-tag">Kinetix Swarm:</span>
+            <p>Welcome, Leader. I am the orchestrator of your active AI agents. Ask me anything about your B2B sales deals, expense leaks, or product backlog.</p>
+          </div>
+        </div>
+        <div class="copilot-input-container">
+          <input type="text" id="copilot-input" placeholder="Ask Swarm Copilot..." autocomplete="off">
+          <button id="btn-send-copilot" class="btn btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </button>
+        </div>
+        <div class="copilot-suggestions">
+          <button class="suggestion-chip" data-query="How to speed up the Infosys deal?">⚡ Unblock Infosys deal</button>
+          <button class="suggestion-chip" data-query="Draft GST audit plan">📋 GST audit checklist</button>
+          <button class="suggestion-chip" data-query="Where is the AWS cloud waste?">💸 Flag AWS waste</button>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <!-- Ingestion Modal -->
+  <div id="ingest-modal" class="modal-overlay">
+    <div class="modal-content glass-card">
+      <div class="modal-header">
+        <h3>Ingest Tally / GST / CRM Telemetry</h3>
+        <button id="modal-close" class="close-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p>Upload Tally XML/CSV exports, Zoho CRM logs, or GSTIN ledger returns to trigger autonomous agent swarm audits.</p>
+        
+        <div class="upload-dropzone" id="dropzone">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          <p>Drag & Drop Tally/GST files here, or <span>browse local machine</span></p>
+          <input type="file" id="file-input" accept=".csv,.json,.txt,.xml" style="display:none;">
+        </div>
+
+        <div class="form-group mt-15">
+          <label>Or Paste Raw Telemetry JSON/CSV Log:</label>
+          <textarea id="paste-input" rows="4" placeholder="Paste Tally ledger or Zoho CRM export... e.g. [{deal: 'Mahindra Logistics', amount: '₹1.8 Cr', status: 'Empanelment Stalled'}]"></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id="modal-cancel" class="btn btn-secondary">Cancel</button>
+        <button id="modal-submit" class="btn btn-primary">Process Swarm Telemetry</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
